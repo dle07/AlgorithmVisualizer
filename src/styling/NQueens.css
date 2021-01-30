@@ -1,0 +1,24 @@
+.BoardContainer{
+    margin:auto;
+    display:flex;
+    flex-direction: column;
+    background:lightblue;
+    margin:auto;
+    width:300px;  /*Tells it to take up 50% of the screen*/
+    height: 300px;
+    
+}
+.Row{
+    display:flex;
+    flex-direction: row;
+    flex-grow:1;
+    flex:1;
+}
+#Cell{
+      /*If you want the child elements in a flex container to take up all the space, you must declare flex:1*/
+    flex:1;
+    flex-grow:1;
+    border-style: solid;
+    border-width:1px;
+}
+

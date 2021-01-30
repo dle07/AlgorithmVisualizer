@@ -1,25 +1,32 @@
-import logo from './logo.svg';
 import './App.css';
+import {BrowserRouter as Router,Switch,Route} from 'react-router-dom';
+import Home from './components/Home';
+import NQueens from './components/NQueens';
+import Soduku from './components/Soduku';
+import Nav from './components/Nav';
+import About from './components/About';
 
 function App() {
   return (
+    <Router>
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+
+        <Nav />
+        <Switch>        {/*Switch makes it so that the endpoint matches to a speciffic endpoint EXACTLY */}
+
+        <Route path = "/" exact = {true} component = {Home}></Route>
+        <Route path = "/nqueens" component = {NQueens}></Route>
+        <Route path = "/soduku" component = {Soduku}></Route>
+        <Route path = "/about" component = {About}></Route>
+         
+        
+        </Switch>
     </div>
+    </Router>
   );
 }
+
+
+
 
 export default App;
